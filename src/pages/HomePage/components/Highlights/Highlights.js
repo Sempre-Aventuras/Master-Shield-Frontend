@@ -1,11 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
+import Background from './images/background.jpg';
+
+const BackgroundArea = styled.section`
+    background: url(${Background}) no-repeat top center;
+    top: 0;
+    background-size: cover;
+    padding: 145px 0;
+    min-height: 110vh;
+    position: relative;
+
+    ::before{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(-45deg, #152649 0%, #4f525c 100%);
+      opacity: .9;
+    }
+`
 
 const Highlights = () => {
 
     return (
-      <section className="hero-area">
+      <BackgroundArea>
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-xl-7 col-lg-8 col-md-10">
@@ -23,8 +44,8 @@ const Highlights = () => {
                     </div>
                 </div>
             </div>
-        </div>        
-      </section>
+        </div>      
+      </BackgroundArea>
     );
 
 }
