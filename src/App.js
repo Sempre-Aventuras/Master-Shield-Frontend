@@ -1,15 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import "react-toastify/dist/ReactToastify.css";
-import { Switch, Route, Redirect, useLocation } from "react-router-dom";
-import AppRoute from './utils/AppRoute';
-import ScrollReveal from './utils/ScrollReveal';
+import { Switch, Route, Redirect } from "react-router-dom";
 import ReactGA from 'react-ga';
 import * as loginActions from "../src/redux/actions/login.action";
 import { useSelector } from "react-redux";
 import "./assets/css/index.css";
-
-// Layouts
-import LayoutDefault from './layouts/LayoutDefault';
 
 // Pages 
 import HomePage from './pages/HomePage';
@@ -26,24 +21,7 @@ import CRUDPage_update from './pages/CRUDPage/CRUD_update';
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
 
-const trackPage = page => {
-  ReactGA.set({ page });
-  ReactGA.pageview(page);
-};
-
 const App = () => {
-
-  const childRef = useRef();
-  let location = useLocation();
-
-  useEffect(() => {
-    const page = location.pathname;
-    document.body.classList.add('is-loaded')
-    childRef.current.init();
-    trackPage(page);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location]);
-
   useSelector(({ loginReducer }) => loginReducer);
   const SecuredRoute = ({ component: Component, ...rest }) => (
     <Route
@@ -61,11 +39,8 @@ const App = () => {
   );
 
   return (
-    <ScrollReveal
-      ref={childRef}
-      children={() => (
         <Switch>
-          <AppRoute exact path="/" component={HomePage} layout={LayoutDefault} />
+          <Route exact path="/" component={HomePage}/>
 
           {/* Auth Pages */}
           <Route exact path="/register" component={Register} />
@@ -83,7 +58,6 @@ const App = () => {
           <SecuredRoute exact path="/crud/new" component={CRUDPage_create} />
           <SecuredRoute exact path="/crud/" component={CRUDPage_index} />
         </Switch>
-      )} />
   );
 }
 
