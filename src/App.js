@@ -4,7 +4,7 @@ import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
 import ReactGA from 'react-ga';
-import * as loginActions from "../../open-react-template/src/redux/actions/login.action";
+import * as loginActions from "../src/redux/actions/login.action";
 import { useSelector } from "react-redux";
 import "./assets/css/index.css";
 

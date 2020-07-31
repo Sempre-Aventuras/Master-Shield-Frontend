@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import reducers from "../../open-react-template/src/redux/reducers";
+import reducers from "./redux/reducers";
 import logger from "redux-logger";
 
 //import './App.css';

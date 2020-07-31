@@ -6,7 +6,7 @@ import swal from 'sweetalert'
 import fs from 'fs'
 
 import Header from "../../components/header";
-import Footer from "../../../../open-react-template/src/components/footer";
+import Footer from "../../components/footer";
 
 const FILE_SIZE = 160 * 1024
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png']
