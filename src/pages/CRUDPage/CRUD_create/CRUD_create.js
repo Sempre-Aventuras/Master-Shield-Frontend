@@ -6,7 +6,7 @@ import * as CRUDActions from "../../../redux/actions/crud.action";
 import { server } from "../../../redux/constants";
 
 import Header from "../../../components/header";
-import Footer from "../../../components/footer";
+import Footer from "../../../../../open-react-template/src/components/footer";
 import "./CRUD_create.css";
 
 const Create_Schema = Yup.object().shape({

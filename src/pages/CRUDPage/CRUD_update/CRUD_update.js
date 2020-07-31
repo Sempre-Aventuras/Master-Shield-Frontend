@@ -5,7 +5,7 @@ import * as crudActions from "../../../redux/actions/crud.action";
 import { server } from "../../../redux/constants";
 
 import Header from "../../../components/header";
-import Footer from "../../../components/footer";
+import Footer from "../../../../../open-react-template/src/components/footer";
 
 const CRUDPage_update = (props) => {
   const dispatch = useDispatch();

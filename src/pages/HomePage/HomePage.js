@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+// import sections
+import Hero from './sections/Hero';
+import FeaturesTiles from './sections/FeaturesTiles';
+import FeaturesSplit from './sections/FeaturesSplit';
+import Testimonial from './sections/Testimonial';
+import Cta from './sections/Cta';
 
-import Header from "../../components/header";
-import Footer from "../../components/footer";
+const HomePage = () => {
 
-class HomePage extends Component {
-  render() {
-    return (
-      
-      <div>
-        <Header/>
-        <div className="container-fluid">
-          <div className="container">
-            <div className="page-container">HomePage</div>
-          </div>
-        </div>
-
-        <Footer/>
-      </div>
-      
-      );
-  }
+  return (
+    <>
+      <Hero className="illustration-section-01" />
+      <FeaturesTiles />
+      <FeaturesSplit invertMobile topDivider imageFill className="illustration-section-02" />
+      <Testimonial topDivider />
+      <Cta split />
+    </>
+  );
 }
 
 export default HomePage;

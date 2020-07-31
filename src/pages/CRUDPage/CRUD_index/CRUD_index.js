@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
 import Header from "../../../components/header";
-import Footer from "../../../components/footer";
+import Footer from "../../../../../open-react-template/src/components/footer";
 
 const CRUD_index = (props) => {
   const crudReducer = useSelector(
