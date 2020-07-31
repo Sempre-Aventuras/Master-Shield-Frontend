@@ -14,7 +14,7 @@ import reducers from "./redux/reducers";
 import logger from "redux-logger";
 
 //import './App.css';
-import './assets/scss/style.scss';
+// import './assets/scss/style.scss';
 
 var middlewares = null;
 
