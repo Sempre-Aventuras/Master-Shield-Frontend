@@ -43,8 +43,8 @@ const Header = () => {
                         </div>
                     </div>
 
-                    <Button className="btnEnter mx-2">Entrar</Button>
-                    <Button className="btnRegister mx-2">Registrar</Button>
+                    <Button href="/login" className="btnEnter mx-2">Entrar</Button>
+                    <Button href="/register" className="btnRegister mx-2">Registrar</Button>
                 </StyledSection>
             </div>
         </StyledHeader>

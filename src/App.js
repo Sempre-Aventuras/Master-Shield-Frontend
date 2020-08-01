@@ -7,12 +7,12 @@ import { useSelector } from "react-redux";
 import "./assets/css/index.css";
 
 // Pages 
-import HomePage from './pages/HomePage';
-import Register from "./pages/RegisterPage";
-import Login from "./pages/LoginPage";
-import Profile from "./pages/ProfilePage";
-import PasswordForgotPage from './pages/password/PasswordForgotPage';
-import PasswordResetPage from './pages/password/PasswordResetPage';
+import LandingPage from './pages/LandingPage';
+import Register from "./pages/auth/RegisterPage";
+import Login from "./pages/auth/LoginPage";
+import Profile from "./pages/main/ProfilePage";
+import PasswordForgotPage from './pages/auth/password/PasswordForgotPage';
+import PasswordResetPage from './pages/auth/password/PasswordResetPage';
 // CRUD template
 import CRUDPage_create from './pages/CRUDPage/CRUD_create';
 import CRUDPage_index from './pages/CRUDPage/CRUD_index';
@@ -40,7 +40,7 @@ const App = () => {
 
   return (
         <Switch>
-          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/" component={LandingPage}/>
 
           {/* Auth Pages */}
           <Route exact path="/register" component={Register} />
@@ -51,7 +51,7 @@ const App = () => {
 
           {/* User Pages */}
           <SecuredRoute exact path="/profile" component={Profile} />
-          <SecuredRoute exact path="/home" component={HomePage} />
+          <SecuredRoute exact path="/home" component={LandingPage} />
 
           {/* Crud Pages */}
           <SecuredRoute exact path="/crud/update/:id" component={CRUDPage_update} />

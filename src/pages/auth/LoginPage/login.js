@@ -6,8 +6,8 @@ import swal from "sweetalert";
 import { Link } from "react-router-dom";
 // Redux
 import { useSelector, useDispatch } from "react-redux";
-import * as loginActions from "../../redux/actions/login.action";
-import { server } from "../../redux/constants";
+import * as loginActions from "../../../redux/actions/login.action";
+import { server } from "../../../redux/constants";
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string()

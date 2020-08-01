@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import * as registerActions from "./../../redux/actions/register.action";
+import * as registerActions from "./../../../redux/actions/register.action";
 import { useSelector, useDispatch } from "react-redux";
 
 const SignupSchema = Yup.object().shape({

@@ -2,7 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
-import * as passwordForgotAction from "./../../../redux/actions/forgotpassword.action";
+import * as passwordForgotAction from "./../../../../redux/actions/forgotpassword.action";
 import { useDispatch } from "react-redux";
 
 const PasswordForgotSchema = Yup.object().shape({
