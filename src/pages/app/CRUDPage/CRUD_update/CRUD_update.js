@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Formik } from "formik";
 import { useSelector, useDispatch } from "react-redux";
-import * as crudActions from "../../../redux/actions/crud.action";
-import { server } from "../../../redux/constants";
+import * as crudActions from "../../../../redux/actions/crud.action";
+import { server } from "../../../../redux/constants";
 
-import Header from "../../../components/header";
-import Footer from "../../../components/footer";
+import Header from "../../../../components/header";
+import Footer from "../../../../components/footer";
 
 const CRUDPage_update = (props) => {
   const dispatch = useDispatch();

@@ -6,17 +6,28 @@ import * as loginActions from "../src/redux/actions/login.action";
 import { useSelector } from "react-redux";
 import "./assets/css/index.css";
 
+// Fas Icons Import
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faBars, faDragon, faStreetView, faHome, faShieldAlt } from '@fortawesome/free-solid-svg-icons'
+
 // Pages 
 import LandingPage from './pages/LandingPage';
 import Register from "./pages/auth/RegisterPage";
 import Login from "./pages/auth/LoginPage";
-import Profile from "./pages/main/ProfilePage";
 import PasswordForgotPage from './pages/auth/password/PasswordForgotPage';
 import PasswordResetPage from './pages/auth/password/PasswordResetPage';
+
+// App
+import HomePage from './pages/app/HomePage';
+import Profile from "./pages/app/ProfilePage";
 // CRUD template
-import CRUDPage_create from './pages/CRUDPage/CRUD_create';
-import CRUDPage_index from './pages/CRUDPage/CRUD_index';
-import CRUDPage_update from './pages/CRUDPage/CRUD_update';
+import CRUDPage_create from './pages/app/CRUDPage/CRUD_create';
+import CRUDPage_index from './pages/app/CRUDPage/CRUD_index';
+import CRUDPage_update from './pages/app/CRUDPage/CRUD_update';
+
+// Start Icons
+library.add(fab, faBars, faDragon, faStreetView, faHome, faShieldAlt)
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -51,7 +62,7 @@ const App = () => {
 
           {/* User Pages */}
           <SecuredRoute exact path="/profile" component={Profile} />
-          <SecuredRoute exact path="/home" component={LandingPage} />
+          <SecuredRoute exact path="/home" component={HomePage} />
 
           {/* Crud Pages */}
           <SecuredRoute exact path="/crud/update/:id" component={CRUDPage_update} />

@@ -41,7 +41,8 @@ const Login = (props) => {
       .then((res) => {
         if (res.data.result === "success") {
           localStorage.setItem("TOKEN_KEY", res.data.token);
-          swal("Success!", res.data.message, "success").then((value) => {
+          console.log(localStorage.getItem("TOKEN_KEY"))
+          swal("Success!"+localStorage.getItem("TOKEN_KEY"), res.data.message, "success").then((value) => {
             history.push("/home");
           });
         } else if (res.data.result === "error") {

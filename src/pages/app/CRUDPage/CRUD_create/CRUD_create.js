@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useSelector, useDispatch } from "react-redux";
-import * as CRUDActions from "../../../redux/actions/crud.action";
-import { server } from "../../../redux/constants";
+import * as CRUDActions from "../../../../redux/actions/crud.action";
+import { server } from "../../../../redux/constants";
 
-import Header from "../../../components/header";
-import Footer from "../../../components/footer";
+import Header from "../../../../components/header";
+import Footer from "../../../../components/footer";
 import "./CRUD_create.css";
 
 const Create_Schema = Yup.object().shape({

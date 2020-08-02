@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import * as crudActions from "../../../redux/actions/crud.action";
-import { server } from "../../../redux/constants";
+import * as crudActions from "../../../../redux/actions/crud.action";
+import { server } from "../../../../redux/constants";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
-import Header from "../../../components/header";
-import Footer from "../../../components/footer";
+import Header from "../../../../components/header";
+import Footer from "../../../../components/footer";
 
 const CRUD_index = (props) => {
   const crudReducer = useSelector(

@@ -69,7 +69,11 @@ class Header extends Component {
           {/* Messages Dropdown Menu */}
           {/* Notifications Dropdown Menu */}
 
-          <li className="nav-item dropdown">
+          <a
+                href="javascript:;"
+                onClick={() => this.Logout()}
+                className="dropdown-item"
+              ><li className="nav-item dropdown">
             <a className="nav-link" data-toggle="dropdown" href="#">
               <i className="far fa-user" />
             </a>
@@ -81,15 +85,12 @@ class Header extends Component {
                 <i className="fas fa-user-alt mr-2" /> Update Profile
               </Link>
               <div className="dropdown-divider" />
-              <a
-                href="javascript:;"
-                onClick={() => this.Logout()}
-                className="dropdown-item"
-              >
+              
                 <i className="fas fa-sign-out-alt mr-2" /> Logout
-              </a>
+              
             </div>
           </li>
+          </a>
         </ul>
       </nav>
     );

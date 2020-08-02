@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import axios from 'axios'
 import swal from 'sweetalert'
 import fs from 'fs'
+import { server } from "../../../redux/constants";
 
 import Header from "../../../components/header";
 import Footer from "../../../components/footer";
@@ -61,7 +62,9 @@ class Profile extends Component {
 
   // Parsing JWT to JSON
   parseJwt () {
-    let token = localStorage.getItem('TOKEN_KEY')
+    console.log(localStorage);
+    let token = localStorage.getItem(server.TOKEN_KEY);
+    alert(token);
     var base64Url = token.split('.')[1]
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/')
     var jsonPayload = decodeURIComponent(
@@ -72,13 +75,13 @@ class Profile extends Component {
         })
         .join('')
     )
-
     return JSON.parse(jsonPayload)
   }
 
   // Retrieve the user id and get user data
   componentDidMount () {
     let { id } = this.parseJwt()
+    console.log(id);
     this.getData(id)
   }
 
