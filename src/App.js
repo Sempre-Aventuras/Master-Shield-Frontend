@@ -6,17 +6,28 @@ import * as loginActions from "../src/redux/actions/login.action";
 import { useSelector } from "react-redux";
 import "./assets/css/index.css";
 
+// Fas Icons Import
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faBars, faDragon, faStreetView, faHome, faShieldAlt } from '@fortawesome/free-solid-svg-icons'
+
 // Pages 
-import HomePage from './pages/HomePage';
-import Register from "./pages/RegisterPage";
-import Login from "./pages/LoginPage";
-import Profile from "./pages/ProfilePage";
-import PasswordForgotPage from './pages/password/PasswordForgotPage';
-import PasswordResetPage from './pages/password/PasswordResetPage';
+import LandingPage from './pages/LandingPage';
+import Register from "./pages/auth/RegisterPage";
+import Login from "./pages/auth/LoginPage";
+import PasswordForgotPage from './pages/auth/password/PasswordForgotPage';
+import PasswordResetPage from './pages/auth/password/PasswordResetPage';
+
+// App
+import HomePage from './pages/app/HomePage';
+import Profile from "./pages/app/ProfilePage";
 // CRUD template
-import CRUDPage_create from './pages/CRUDPage/CRUD_create';
-import CRUDPage_index from './pages/CRUDPage/CRUD_index';
-import CRUDPage_update from './pages/CRUDPage/CRUD_update';
+import CRUDPage_create from './pages/app/CRUDPage/CRUD_create';
+import CRUDPage_index from './pages/app/CRUDPage/CRUD_index';
+import CRUDPage_update from './pages/app/CRUDPage/CRUD_update';
+
+// Start Icons
+library.add(fab, faBars, faDragon, faStreetView, faHome, faShieldAlt)
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -40,7 +51,7 @@ const App = () => {
 
   return (
         <Switch>
-          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/" component={LandingPage}/>
 
           {/* Auth Pages */}
           <Route exact path="/register" component={Register} />
