@@ -27,33 +27,13 @@ const Login = (props) => {
     }
     let notify = props.match.params["notify"];
     if (notify !== undefined) {
-      if (notify == "error") {
+      if (notify === "error") {
         swal("Activation Fail please try again !", "", "error");
-      } else if (notify == "success") {
+      } else if (notify === "success") {
         swal("Activation Success your can login !", "", "success");
       }
     }
   }, []);
-
-  function submitForm(values, history) {
-    axios
-      .post(process.env.REACT_APP_API_URL + "login", values)
-      .then((res) => {
-        if (res.data.result === "success") {
-          localStorage.setItem("TOKEN_KEY", res.data.token);
-          console.log(localStorage.getItem("TOKEN_KEY"))
-          swal("Success!"+localStorage.getItem("TOKEN_KEY"), res.data.message, "success").then((value) => {
-            history.push("/home");
-          });
-        } else if (res.data.result === "error") {
-          swal("Error!", res.data.message, "error");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        return swal("Error!", error.message, "error");
-      });
-  }
 
   const showForm = ({
     values,
@@ -74,11 +54,6 @@ const Login = (props) => {
             value={values.username}
             className="form-control"
             placeholder="Username"
-            className={
-              errors.username && touched.username
-                ? "form-control is-invalid"
-                : "form-control"
-            }
           />
           <div class="input-group-append">
             <div class="input-group-text">
@@ -99,11 +74,6 @@ const Login = (props) => {
             value={values.password}
             className="form-control"
             placeholder="Password"
-            className={
-              errors.password && touched.password
-                ? "form-control is-invalid"
-                : "form-control"
-            }
           />
           <div class="input-group-append">
             <div class="input-group-text">
@@ -153,7 +123,6 @@ const Login = (props) => {
               initialValues={{
                 username: "",
                 password: "",
-                recaptcha: "",
               }}
               onSubmit={(values, { setSubmitting }) => {
                 dispatch(loginActions.login(values, props.history));
