@@ -21,6 +21,7 @@ import PasswordResetPage from './pages/auth/password/PasswordResetPage';
 // App
 import HomePage from './pages/app/HomePage';
 import Profile from "./pages/app/ProfilePage";
+import ProfilePage from "./pages/app/profile/ProfilePage";
 // CRUD template
 import CRUDPage_create from './pages/app/CRUDPage/CRUD_create';
 import CRUDPage_index from './pages/app/CRUDPage/CRUD_index';
@@ -61,7 +62,8 @@ const App = () => {
           <Route exact path="/password/forgot" component={PasswordForgotPage} />
 
           {/* User Pages */}
-          <SecuredRoute exact path="/profile" component={Profile} />
+          <SecuredRoute exact path="/profile" component={ProfilePage} />
+          <SecuredRoute exact path="/profile/update" component={Profile} />
           <SecuredRoute exact path="/home" component={HomePage} />
 
           {/* Crud Pages */}
